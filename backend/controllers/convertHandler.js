@@ -29,15 +29,27 @@ function ConvertHandler() {
 	};
 
 	this.getReturnUnit = function(initUnit) {
-		var result;
-
-		return result;
+		switch(initUnit) {
+			case 'gal': return 'l';
+			case 'l': return 'gal';
+			case 'mi': return 'km';
+			case 'km': return 'mi';
+			case 'lbs': return 'kg';
+			case 'kg': return 'lbs';
+			default: return null;
+		}
 	};
 
 	this.spellOutUnit = function(unit) {
-		var result;
-
-		return result;
+		switch(unit) {
+			case 'gal': return 'gallon';
+			case 'l': return 'litre';
+			case 'mi': return 'mile';
+			case 'km': return 'kilometer';
+			case 'lbs': return 'pound';
+			case 'kg': return 'kilogram';
+			default: return null;
+		}
 	};
 
 	this.convert = function(initNum, initUnit) {

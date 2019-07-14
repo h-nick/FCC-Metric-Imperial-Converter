@@ -13,7 +13,6 @@ var ConvertHandler = require('../controllers/convertHandler.js');
 var convertHandler = new ConvertHandler();
 
 suite('Unit Tests', function(){
-  
 	suite('Function convertHandler.getNum(input)', function() {
     
     	test('Whole number input', function(done) {
@@ -75,26 +74,29 @@ suite('Unit Tests', function(){
 	});
   
 	suite('Function convertHandler.getReturnUnit(initUnit)', function() {
-    
-    test('For Each Valid Unit Inputs', function(done) {
-      var input = ['gal','l','mi','km','lbs','kg'];
-      var expect = ['l','gal','km','mi','kg','lbs'];
-      input.forEach(function(ele, i) {
-        assert.equal(convertHandler.getReturnUnit(ele), expect[i]);
-      });
-      done();
-    });
-    
-  });  
+		test('For Each Valid Unit Inputs', function(done) {
+			var input = ['gal','l','mi','km','lbs','kg'];
+			var expect = ['l','gal','km','mi','kg','lbs'];
+		
+			input.forEach(function(ele, i) {
+				assert.equal(convertHandler.getReturnUnit(ele), expect[i]);
+			});
+		
+			done();
+		});
+	});
   
-  suite('Function convertHandler.spellOutUnit(unit)', function() {
-    
-    test('For Each Valid Unit Inputs', function(done) {
-      //see above example for hint
-      done();
-    });
-    
-  });
+	suite('Function convertHandler.spellOutUnit(unit)', function() {
+		test('For Each Valid Unit Inputs', function(done) {
+			assert.equal(convertHandler.spellOutUnit('gal'), 'gallon')
+			assert.equal(convertHandler.spellOutUnit('l'), 'litre')
+			assert.equal(convertHandler.spellOutUnit('mi'), 'mile')
+			assert.equal(convertHandler.spellOutUnit('km'), 'kilometer')
+			assert.equal(convertHandler.spellOutUnit('lbs'), 'pound')
+			assert.equal(convertHandler.spellOutUnit('kg'), 'kilogram')
+			done();
+		});
+	});
   
   suite('Function convertHandler.convert(num, unit)', function() {
     
