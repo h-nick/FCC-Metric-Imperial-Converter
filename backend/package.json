@@ -8,7 +8,7 @@
 	"main": "server.js",
 	"scripts": {
 		"start": "nodemon server.js",
-		"test": "mocha  --ui tdd tests/1_unit-tests.js"
+		"test": "mocha --ui tdd --recursive tests"
 	},
 	"dependencies": {
 		"body-parser": "^1.15.2",
