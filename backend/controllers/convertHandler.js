@@ -69,11 +69,14 @@ function ConvertHandler() {
 	};
 
 	this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-		var result;
+		let trnsfInitUnit = this.spellOutUnit(initUnit);
+		let trnsfReturnedUnit = this.spellOutUnit(returnUnit);
 
-		return result;
+		if(initNum !== 1) trnsfInitUnit += 's';
+		if(returnNum !== 1) trnsfReturnedUnit += 's';
+
+		return `${initNum} ${trnsfInitUnit} converts to ${returnNum} ${trnsfReturnedUnit}`;
 	};
-  
 }
 
 module.exports = ConvertHandler;
