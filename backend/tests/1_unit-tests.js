@@ -61,14 +61,16 @@ suite('Unit Tests', function(){
 		test('For Each Valid Unit Inputs', function(done) {
 			var input = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
 			input.forEach(function(ele) {
-				//assert
+				assert.equal(convertHandler.getUnit('12345' + ele), ele);
+				assert.equal(convertHandler.getUnit('1.2/1.5' + ele), ele);
+				assert.equal(convertHandler.getUnit('0.98299' + ele), ele);
 			});
 			done();
 		});
 		
 		test('Unknown Unit Input', function(done) {
-		
-		//done();
+			assert.isNull(convertHandler.getUnit(''));
+			done();
 		});  
 	});
   

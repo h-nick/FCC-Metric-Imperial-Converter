@@ -24,6 +24,7 @@ function ConvertHandler() {
 	};
   
 	this.getUnit = function(input) {
+		if(input === '') return null;
 		return input.match(/[a-zA-Z]/g).join('');
 	};
 
