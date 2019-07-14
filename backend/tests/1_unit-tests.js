@@ -14,59 +14,65 @@ var convertHandler = new ConvertHandler();
 
 suite('Unit Tests', function(){
   
-  suite('Function convertHandler.getNum(input)', function() {
+	suite('Function convertHandler.getNum(input)', function() {
     
-    test('Whole number input', function(done) {
-      var input = '32L';
-      assert.equal(convertHandler.getNum(input),32);
-      done();
-    });
+    	test('Whole number input', function(done) {
+			assert.equal(convertHandler.getNum('32lbs'), 32);
+			assert.equal(convertHandler.getNum('14GAL'), 14);
+			assert.equal(convertHandler.getNum('25L'), 25);
+    		done();
+    	});
     
-    test('Decimal Input', function(done) {
-      
-      //done();
-    });
-    
-    test('Fractional Input', function(done) {
-      
-      //done();
-    });
-    
-    test('Fractional Input w/ Decimal', function(done) {
-      
-      //done();
-    });
-    
-    test('Invalid Input (double fraction)', function(done) {
-      
-      //done();
-    });
-    
-    test('No Numerical Input', function(done) {
-      
-      //done();
-    }); 
-    
-  });
+		test('Decimal Input', function(done) {
+			assert.equal(convertHandler.getNum('40.5KG'), 40.5);
+			assert.equal(convertHandler.getNum('25.5KG'), 25.5);
+			assert.equal(convertHandler.getNum('0.7KG'), 0.7);
+			done();
+		});
+		
+		test('Fractional Input', function(done) {
+			assert.equal(convertHandler.getNum('10/5lbs'), 2);
+			assert.equal(convertHandler.getNum('5/10lbs'), 0.5);
+			assert.equal(convertHandler.getNum('4/4lbs'), 1);
+			done();
+		});
+		
+		test('Fractional Input w/ Decimal', function(done) {
+			assert.equal(convertHandler.getNum('6.75/4.25lbs'), 1.58824);
+			assert.equal(convertHandler.getNum('7.5/2lbs'), 3.75);
+			assert.equal(convertHandler.getNum('12343.92819/1.72839lbs'), 7141.86508);
+			done();
+		});
+		
+		test('Invalid Input (double fraction)', function(done) {
+			assert.isNaN(convertHandler.getNum('7/5/14/3lbs'));
+			assert.isNaN(convertHandler.getNum('3/9/4/5lbs'));
+			assert.isNaN(convertHandler.getNum('5/7/0/7lbs'));
+			done();
+		});
+		
+		test('No Numerical Input', function(done) {
+			assert.equal(convertHandler.getNum(''), 1);
+			done();
+		});
+	});
+
+	suite('Function convertHandler.getUnit(input)', function() {
+		test('For Each Valid Unit Inputs', function(done) {
+			var input = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
+			input.forEach(function(ele) {
+				//assert
+			});
+			done();
+		});
+		
+		test('Unknown Unit Input', function(done) {
+		
+		//done();
+		});  
+	});
   
-  suite('Function convertHandler.getUnit(input)', function() {
-    
-    test('For Each Valid Unit Inputs', function(done) {
-      var input = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
-      input.forEach(function(ele) {
-        //assert
-      });
-      done();
-    });
-    
-    test('Unknown Unit Input', function(done) {
-      
-      //done();
-    });  
-    
-  });
-  
-  suite('Function convertHandler.getReturnUnit(initUnit)', function() {
+	suite('Function convertHandler.getReturnUnit(initUnit)', function() {
     
     test('For Each Valid Unit Inputs', function(done) {
       var input = ['gal','l','mi','km','lbs','kg'];
