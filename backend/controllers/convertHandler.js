@@ -26,11 +26,11 @@ function ConvertHandler() {
   
 	this.getUnit = function(input) {
 		if(input === '') return null;
-		return input.match(/[a-zA-Z]/g).join('');
+		else return input.match(/[a-zA-Z]/g).join('');
 	};
 
 	this.getReturnUnit = function(initUnit) {
-		switch(initUnit) {
+		switch(initUnit.toLowerCase()) {
 			case 'gal': return 'l';
 			case 'l': return 'gal';
 			case 'mi': return 'km';
@@ -42,7 +42,7 @@ function ConvertHandler() {
 	};
 
 	this.spellOutUnit = function(unit) {
-		switch(unit) {
+		switch(unit.toLowerCase()) {
 			case 'gal': return 'gallon';
 			case 'l': return 'litre';
 			case 'mi': return 'mile';
@@ -58,7 +58,7 @@ function ConvertHandler() {
 		const miToKm = 1.60934;
 		const lbsToKg = 0.453592;
 
-		switch(initUnit) {
+		switch(initUnit.toLowerCase()) {
 			case 'gal': return Number((initNum * galToL).toFixed(5));
 			case 'l': return Number((initNum / galToL).toFixed(5));
 			case 'mi': return Number((initNum * miToKm).toFixed(5));
