@@ -8,9 +8,10 @@
 
 function ConvertHandler() {
 	this.getNum = function(input) {
-		if(input === '') return 1;
-
 		let val = input.replace(/[a-zA-Z]/g, '');
+		
+		if(val === '') return 1;
+		
 		const fractionIndex = val.search(/\//g);
 
 		if(fractionIndex !== -1) {
