@@ -7,7 +7,8 @@
 	"description": "What am I about?",
 	"main": "server.js",
 	"scripts": {
-		"start": "nodemon server.js",
+		"start": "node server.js",
+		"nodemon": "nodemon server.js",
 		"test": "mocha --ui tdd --recursive tests"
 	},
 	"dependencies": {
@@ -22,7 +23,7 @@
 		"zombie": "^6.1.4"
 	},
 	"engines": {
-		"node": "4.4.3"
+		"node": "10.15.2"
 	},
 	"repository": {
 		"type": "git",
