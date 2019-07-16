@@ -28,7 +28,7 @@ module.exports = function (app) {
 			case'l': case 'L':
 			case 'mi': case 'MI':
 			case 'km': case 'KM':
-			case 'lbs': case 'LBS':
+			case 'lb': case 'LB':
 			case 'kg': case 'KG': break;
 			default: okUnit = false;
 		}
