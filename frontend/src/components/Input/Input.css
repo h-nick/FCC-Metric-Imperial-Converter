@@ -1,0 +1,25 @@
+input {
+	width: 500px;
+	border: none;
+	border: 1px solid #dfdfdf;
+	font-size: 3em;
+	padding: 1.5rem;
+	margin-left: 10px;
+	border-radius: 5px;
+}
+
+select {
+	width: 370px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: transparent;
+	background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='60' viewBox='0 0 24 24' width='60' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+	background-repeat: no-repeat;
+	background-position-x: 50%;
+	background-position-y: 140%;
+	text-align-last: center;
+	font-size: 3em;
+	border: 1px solid #dfdfdf;
+	border-radius: 5px;
+	padding: 1.5rem;
+}
