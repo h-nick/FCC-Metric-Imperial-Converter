@@ -2,16 +2,52 @@ import React, { Component } from 'react';
 import Input from '../../components/Input/Input';
 import Styles from './App.css';
 import Result from '../../components/Result/Result';
+import axios from 'axios';
 
 class App extends Component {
-	state = {
-		result: null
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			result: undefined,
+			unit: 'gal',
+			value: ''
+		}
+	}
+
+	sendData = () => {
+		axios.get('https://fcc-metric-imperial-converter1.herokuapp.com/api/convert?input=' +
+		(this.state.value) + (this.state.unit))
+		.then(response => {
+			this.setState({
+				result: response.data.string
+			});
+		})
+		.catch(() => {
+			this.setState({
+				result: 'Invalid value'
+			});
+		});
+	}
+
+	inputChangedHandler = event => {
+		this.setState({
+			value: event.target.value
+		}, () => {
+			if(this.state.value !== '') this.sendData()
+		});
+	}
+
+	dropdownChangedHandler = event => {
+		this.setState({
+			unit: event.target.value
+		}, () => this.sendData());
 	}
 
 	render() {
 		let result = <Result>Please insert a value</Result>
 
-		if(this.state.result) {
+		if(this.state.result && this.state.value !== '') {
 			result = <Result>{this.state.result}</Result>;
 		}
 
@@ -20,7 +56,10 @@ class App extends Component {
 				<h1>FCC - Metric Imperial Converter</h1>
 				
 				<div className={Styles.DataEntry}>
-					<Input type = 'dropdown' options = {[
+					<Input
+					onChange = {event => this.dropdownChangedHandler(event)}
+					type = 'dropdown'
+					options = {[
 						{ value: 'gal', name: 'gal - Gallon' },
 						{ value: 'l', name: '\u2113 - Litre' },
 						{ value: 'mi', name: 'mi - Mile' },
@@ -28,7 +67,13 @@ class App extends Component {
 						{ value: 'lb', name: 'lb - Pound' },
 						{ value: 'kg', name: 'kg - Kilogram' }
 					]}/>
-					<Input type = 'input' placeholder = 'here' focus/>
+					
+					<Input
+					type = 'input'
+					placeholder = 'here'
+					value = {this.state.value}
+					onChange = {event => this.inputChangedHandler(event)}
+					focus/>
 				</div>
 
 				<div className={Styles.Result}>{result}</div>
