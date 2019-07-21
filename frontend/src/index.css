@@ -1,11 +1,15 @@
-p, h1, h2, h3, h4, h5, option, select, span, a {
-	font-family: "Helvetica";
+p, h1, h2, h3, h4, h5, option, select, span, a, input {
+	font-family: 'Montserrat', Helvetica, sans-serif;
+	color: #fcfcfc;
 }
 
 body {
 	margin: 0;
+	height: 100vh;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background: rgb(92,90,97);
+	background: linear-gradient(25deg, rgba(92,90,97,1) 0%, rgba(140,128,125,1) 25%, rgba(179,148,136,1) 50%, rgba(214,151,135,1) 75%, rgba(255,150,136,1) 100%);
 }
 
 code {

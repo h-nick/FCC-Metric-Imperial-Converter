@@ -63,7 +63,7 @@ class App extends Component {
 
 		return (
 			<div className={Styles.App}>
-				<h1>FCC - Metric Imperial Converter</h1>
+				<h1>FCC | METRIC-IMPERIAL UNIT CONVERTER</h1>
 				
 				<div className={Styles.DataEntry}>
 					<Input
@@ -80,7 +80,7 @@ class App extends Component {
 					
 					<Input
 					type = 'input'
-					placeholder = 'here'
+					placeholder = 'Insert a value here'
 					value = {this.state.value}
 					onChange = {event => this.inputChangedHandler(event)}
 					focus/>
