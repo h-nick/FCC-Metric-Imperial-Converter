@@ -16,12 +16,12 @@ const Input = (props) => {
 		break;
 
 		case 'dropdown': toRender = (
-			<select>
+			<select onChange={props.onChange}>
 				{props.options.map(option => {
 					return (
 						<option
-						value = {option.value}
-						onChange = {props.onChange}>
+						key = {option.value}
+						value = {option.value}>
 							{option.name}
 						</option>
 					)
