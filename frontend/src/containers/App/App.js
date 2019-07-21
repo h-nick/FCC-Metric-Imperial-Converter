@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Input from '../../components/Input/Input';
 import Styles from './App.css';
+import Result from '../../components/Result/Result';
 
 class App extends Component {
 	state = {
@@ -8,10 +9,10 @@ class App extends Component {
 	}
 
 	render() {
-		let result = <h2>Please insert a value</h2>
+		let result = <Result>Please insert a value</Result>
 
 		if(this.state.result) {
-
+			result = <Result>{this.state.result}</Result>;
 		}
 
 		return (
