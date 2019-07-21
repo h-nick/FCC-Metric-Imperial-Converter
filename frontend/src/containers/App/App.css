@@ -19,12 +19,8 @@ h1 {
 }
 
 .Result {
-	font-size: 3em;
+	font-size: 1.5em;
 	grid-row: 3;
-}
-
-.Result h2 {
-	margin: 50px 0;
 }
 
 .Descriptions {
