@@ -90,16 +90,29 @@ class App extends Component {
 
 				<div className={Styles.Descriptions}>
 					<div className={Styles.Text}>
-						<h2>Imperial Units</h2>
-						<p><strong>Gallon:</strong> lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-						<p><strong>Mile:</strong> lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum v</p>
-						<p><strong>Pound:</strong> lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
+						<h2>About this tool</h2>
+						<p>
+							This is a React Single Page Application to convert metric volume,
+							distance and weight units to imperial units and vice versa.
+						</p>
+						<p>
+							It receives the final result from an API powered by Express and tested
+							with Mocha and Chai, which handles the conversion process.
+						</p>
+						<p>
+							This app was made following FCC guidelines and requirements.
+							It's one of the projects necessary to receive FCC's Information
+							Security and Quality Assurance Certification.
+						</p>
 					</div>
 					<div className={Styles.Text}>
-						<h2>Metric Units</h2>
-						<p><strong>Litre:</strong> lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum vv</p>
-						<p><strong>Kilometre:</strong> lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-						<p><strong>Kilogram:</strong> lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
+						<h2>Conversion rates</h2>
+						<p><strong>Litres per Gallons</strong></p>
+						<p>3.78541</p>
+						<p><strong>Kilometres per Miles</strong></p>
+						<p>1.60934</p>
+						<p><strong>Kilograms per Pounds</strong></p>
+						<p>0.453592</p>
 					</div>
 				</div>
 			</div>

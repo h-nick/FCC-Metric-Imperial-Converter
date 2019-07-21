@@ -29,10 +29,20 @@ h1 {
 	grid-row: 4;
 }
 
+.Text h2 {
+	text-align: center;
+}
+
 .Text {
 	padding: 0 5%;
+	flex-basis: 100%;
 }
 
 .Text p {
 	text-align: justify;
+	margin: 10px 0;
+}
+
+.Descriptions .Text:nth-child(2) p {
+	text-align: center;
 }
