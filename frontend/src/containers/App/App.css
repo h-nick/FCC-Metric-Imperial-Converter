@@ -1,8 +1,46 @@
+.App {
+	display: grid;
+	grid-template-rows: auto auto auto auto;
+	justify-items: center;
+}
+
+h1 {
+	grid-row: 1;
+}
+
 .DataEntry {
+	padding-top: 2%;
+	grid-row: 2;
 	width: 950px;
-	position: relative;
+	/* position: relative;
 	left: 50%;
-	top: 50px;
-	margin-left: -475px;
+	margin-left: -475px; */
 	text-align: center;
+}
+
+.Result {
+	font-size: 3em;
+	grid-row: 3;
+}
+
+.Result h2 {
+	margin: 50px 0;
+}
+
+.Descriptions {
+	padding: 0 5%;
+	display: flex;
+	grid-row: 4;
+}
+
+.Descriptions h2 {
+	text-align: center;
+}
+
+.Text {
+	padding: 0 5%;
+}
+
+.Text p {
+	text-align: justify;
 }
