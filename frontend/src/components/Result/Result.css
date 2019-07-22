@@ -2,4 +2,11 @@
 	text-align: center;
 	margin: 50px 0;
 	font-style: italic;
+	font-size: 1.2em;
+}
+
+@media (min-width: 1200px) {
+	.Result {
+		font-size: 1.5em;
+	}
 }

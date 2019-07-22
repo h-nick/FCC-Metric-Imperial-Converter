@@ -67,6 +67,13 @@ class App extends Component {
 				
 				<div className={Styles.DataEntry}>
 					<Input
+					type = 'input'
+					placeholder = 'Insert a value here'
+					value = {this.state.value}
+					onChange = {event => this.inputChangedHandler(event)}
+					focus/>
+
+					<Input
 					onChange = {event => this.dropdownChangedHandler(event)}
 					type = 'dropdown'
 					options = {[
@@ -77,13 +84,6 @@ class App extends Component {
 						{ value: 'lb', name: 'lb - Pound' },
 						{ value: 'kg', name: 'kg - Kilogram' }
 					]}/>
-					
-					<Input
-					type = 'input'
-					placeholder = 'Insert a value here'
-					value = {this.state.value}
-					onChange = {event => this.inputChangedHandler(event)}
-					focus/>
 				</div>
 
 				{resultWrapper}

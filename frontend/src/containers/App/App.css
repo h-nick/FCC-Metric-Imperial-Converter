@@ -7,17 +7,16 @@
 
 h1 {
 	grid-row: 1;
+	text-align: center;
+	font-size: 1.2em;
 }
 
 .DataEntry {
 	padding-top: 2%;
 	grid-row: 2;
-	width: 1250px;
+	display: grid;
+	grid-template-rows: auto auto;
 	text-align: center;
-}
-
-.DataEntry select {
-	width: 35%;
 }
 
 .DataEntry select, .DataEntry input {
@@ -34,23 +33,28 @@ option {
 }
 
 .Result {
-	font-size: 1.5em;
 	grid-row: 3;
 }
 
 .Descriptions {
 	padding: 0 5%;
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: wrap-reverse;
 	grid-row: 4;
+}
+
+.Text * {
+	font-size: 1em;
 }
 
 .Text h2 {
 	text-align: center;
+	font-size: 1.2em;
 }
 
 .Text {
-	flex-basis: 50%;
+	flex-basis: 100%;
+	margin-bottom: 25px;
 }
 
 .Text p {
@@ -60,4 +64,35 @@ option {
 
 .Descriptions .Text:nth-child(2) p {
 	text-align: center;
+}
+
+.Descriptions .Text:nth-child(1) p {
+	margin: 10px 75px;
+}
+
+@media (min-width: 1200px) {
+	h1 {
+		font-size: 1.5em;
+	}
+	
+	.DataEntry {
+		display: block;
+	}
+	
+	.Result {
+		font-size: 1.5em;
+	}
+
+	.Text {
+		flex-basis: 50%;
+	}
+
+	.Text * {
+		font-size: 1.2em;
+	}
+
+	.Text h2 {
+		text-align: center;
+		font-size: 1.5em;
+	}
 }
