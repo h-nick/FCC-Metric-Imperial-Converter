@@ -32,12 +32,19 @@ option {
 	padding: 0 5px;
 }
 
+.ResultWrapper {
+	padding: 0 10%;
+	display: flex;
+	align-items: center;
+	min-height: 200px;
+}
+
 .Result {
 	grid-row: 3;
 }
 
 .Descriptions {
-	padding: 0 5%;
+	padding: 0 3%;
 	display: flex;
 	flex-wrap: wrap-reverse;
 	grid-row: 4;
@@ -67,7 +74,7 @@ option {
 }
 
 .Descriptions .Text:nth-child(1) p {
-	margin: 10px 75px;
+	margin: 10px 25px;
 }
 
 @media (min-width: 1200px) {

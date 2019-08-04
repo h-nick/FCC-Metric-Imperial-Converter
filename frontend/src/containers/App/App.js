@@ -86,7 +86,9 @@ class App extends Component {
 					]}/>
 				</div>
 
-				{resultWrapper}
+				<div className={Styles.ResultWrapper}>
+					{resultWrapper}
+				</div>
 
 				<div className={Styles.Descriptions}>
 					<div className={Styles.Text}>
